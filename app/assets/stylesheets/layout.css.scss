@@ -1,8 +1,52 @@
 @import 'bootstrap';
 @import 'bootstrap-responsive';
 
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/** HEADER **/
+
 @media (min-width: 981px) {
   body {
     padding-top: 91px;
   }
+}
+
+/** FOOTER **/
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  @include box_sizing;
+}
+
+#footer {
+  background: #E4E4E4;
+  border-top: 1px solid #D2D2D2;
+  position: relative;
+  clear: both;
+}
+
+#footer-bar {
+  border-top: 1px solid #78787A;
+  border-bottom: 1px solid #99CAF1;
+  background: #fb5500;
+  height:9px;
+}
+
+#footer-content {
+  height:77px;
+  border-bottom:1px solid #BCBCBC;
+}
+
+#copyright {
+  border-top:1px solid #FFFFFF;
+  padding:16px;
+  text-align:center;
+  color:#5D7283;
+  font-size:12px;
 }
