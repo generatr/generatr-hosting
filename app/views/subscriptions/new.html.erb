@@ -1,2 +1,41 @@
+<h2>Plan: <%= @plan %></h2>
+
+<%= form_tag subscriptions_path, {} do %>
+
+  <%= hidden_field_tag :plan_id, @plan.id %>
+
+  <fieldset>
+
+    <%= label_tag :name, "Name" %>
+    <%= text_field_tag :name, nil, class: "input-xlarge" %>
+
+    <%= label_tag :email_address, "Email Address" %>
+    <%= email_field_tag :email_address, nil, class: "input-xlarge" %>
+
+    <%= label_tag :phone_number, "Phone Number" %>
+    <%= telephone_field_tag :phone_number, nil, class: "input-xlarge" %>
+
+  </fieldset>
+
+  <fieldset>
+
+    <%= label_tag :card_number, "Credit Card Number" %>
+    <%= text_field_tag :card_number, nil, name: nil, class: "input-xlarge" %>
+
+    <%= label_tag :card_code, "Security Code on Card (CVV)" %>
+    <%= text_field_tag :card_code, nil, name: nil, class: "input-mini", maxlength: "4" %>
+
+    <%= label_tag :card_month, "Card Expiration" %>
+    <%= select_month nil, { add_month_numbers: true }, { name: nil, id: "card_month", class: "input-medium" } %>
+    <%= select_year nil, { start_year: Date.today.year, end_year: Date.today.year + 15 }, { name: nil, id: "card_year", class: "input-small" } %>
+
+  </fieldset>
+
+  <div class="form-actions">
+    <%= button_tag "Purchase", type: "submit", class: "btn btn-primary" %>
+    <%= link_to "Cancel", plan_path(@plan), class: "btn" %>
+  </div>
+
+<% end %>
 
 <%= stripe_javascript_tag %>
