@@ -2,9 +2,10 @@
 
 <%= render 'shared/form_messages', object: @subscription if @subscription %>
 
-<%= form_tag subscriptions_path do %>
+<%= form_tag subscriptions_path, id: "new_subscription" do %>
 
   <%= hidden_field_tag :plan_id, @plan.id, name: "subscription[plan_id]" %>
+  <%= hidden_field_tag :token, nil, name: "stripe_token", id: "stripe_token" %>
 
   <fieldset>
 
@@ -39,5 +40,3 @@
   </div>
 
 <% end %>
-
-<%= stripe_javascript_tag %>
