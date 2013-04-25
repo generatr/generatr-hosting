@@ -6,8 +6,8 @@
 #  plan_id     :integer
 #  customer_id :integer
 #  start_date  :datetime
-#  suspended   :boolean
-#  deleted     :boolean
+#  suspended   :boolean          default(FALSE)
+#  deleted     :boolean          default(FALSE)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
