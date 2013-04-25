@@ -4,18 +4,18 @@
 
 <%= form_tag subscriptions_path do %>
 
-  <%= hidden_field_tag :plan_id, @plan.id %>
+  <%= hidden_field_tag :plan_id, @plan.id, name: "subscription[plan_id]" %>
 
   <fieldset>
 
     <%= label_tag :name, "Name" %>
-    <%= text_field_tag :name, nil, class: "input-xlarge" %>
+    <%= text_field_tag :name, nil, class: "input-xlarge", name: "customer[name]" %>
 
     <%= label_tag :email_address, "Email Address" %>
-    <%= email_field_tag :email_address, nil, class: "input-xlarge" %>
+    <%= email_field_tag :email_address, nil, class: "input-xlarge", name: "customer[email_address]" %>
 
     <%= label_tag :phone_number, "Phone Number" %>
-    <%= telephone_field_tag :phone_number, nil, class: "input-xlarge" %>
+    <%= telephone_field_tag :phone_number, nil, class: "input-xlarge", name: "customer[phone_number]" %>
 
   </fieldset>
 

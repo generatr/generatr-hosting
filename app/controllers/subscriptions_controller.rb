@@ -14,12 +14,17 @@ class SubscriptionsController < ApplicationController
 
   def create
 
+    @customer = Customer.create!(params[:customer])
+
+    params[:subscription][:start_date] = DateTime.new
+    params[:subscription][:customer_id] = @customer.id
+
     @subscription = Subscription.new(params[:subscription])
 
     unless @subscription.save
       respond_with @subscription do |format|
         format.html { render action: "new" }
-        format.json { render json: @package.errors, status: :unprocessable_entity }
+        format.json { render json: @subscription.errors, status: :unprocessable_entity }
       end
     end
 
