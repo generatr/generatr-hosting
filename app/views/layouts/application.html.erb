@@ -1,25 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Able Hosting</title>
-    <%= stylesheet_link_tag    "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
-    <%= stripe_javascript_tag %>
-    <%= csrf_meta_tags %>
-    <%= viewport_tag %>
+    <%= meta_tags %>
     <%= stripe_meta_tag %>
+    <%= csrf_meta_tags %>
+    <title>Generatr Hosting</title>
+    <%= favicon_link_tag %>
+    <%= stylesheet_link_tag "application", media: "all",
+      "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= stripe_javascript_tag %>
+    <!--[if lt IE 9]>
+    <%= html5shim_javascript_tag %>
+    <%= respondjs_javascript_tag %>
+    <![endif]-->
   </head>
   <body>
 
     <%= render 'layouts/header' %>
 
-    <div id="body" class="container">
-      <div id="app">
-        <%= yield %>
-      </div>
-      <%= debug(params) if Rails.env.development? %>
-    </div>
+    <section id="app">
+      <%= yield %>
+    </section>
 
+    <%= debug(params) if Rails.env.development? %>
     <%= render 'layouts/footer' %>
 
   </body>

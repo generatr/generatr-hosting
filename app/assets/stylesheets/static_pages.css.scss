@@ -1,3 +1,55 @@
-// Place all the styles related to the static_pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+
+  height: 500px;
+  margin-bottom: 60px;
+
+  .item {
+    height: 500px;
+    background-color: #777;
+  }
+
+  /* Declare heights because of positioning of img element */
+  .carousel-inner > .item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 500px;
+  }
+
+  /* Since positioning the image, we need to help out the caption */
+  .carousel-caption {
+    z-index: 10;
+  }
+
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+.marketing {
+
+  /* Pad the edges of the mobile views a bit */
+  padding-left: 15px;
+  padding-right: 15px;
+
+  h2 {
+    font-weight: normal;
+  }
+
+  /* Center align the text within the three columns below the carousel */
+  .col-lg-4 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .col-lg-4 p {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+}

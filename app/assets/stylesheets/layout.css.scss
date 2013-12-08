@@ -6,53 +6,58 @@
   box-sizing: border-box;
 }
 
-/** HEADER **/
-
-@media (min-width: 981px) {
-  body {
-    padding-top: 81px;
-  }
-}
-
 /** BODY **/
 
-#body {
+body {
   padding-bottom: 40px;
+  color: #5a5a5a;
+}
+
+/** HEADER **/
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+.navbar-wrapper {
+
+  /*
+   * Special class on .container surrounding .navbar, used for positioning it
+   * into place.
+   */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+
+  /* Flip around the padding for proper display in narrow viewports */
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .navbar {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
 }
 
 /** FOOTER **/
 
+#copyright {
+  border-top: 1px solid #FFFFFF;
+  padding: 16px;
+  text-align: center;
+  color: #5D7283;
+  font-size: 12px;
+}
+
+
+
 .debug_dump {
+  @include box_sizing;
   clear: both;
   float: left;
-  width: 100%;
-  @include box_sizing;
   margin: 40px 0 0 0;
+  width: 100%;
 }
 
-#footer {
-  background: #E4E4E4;
-  border-top: 1px solid #D2D2D2;
-  position: relative;
-  clear: both;
-}
-
-#footer-bar {
-  border-top: 1px solid #78787A;
-  border-bottom: 1px solid #99CAF1;
-  background: #fb5500;
-  height:9px;
-}
-
-#footer-content {
-  height:77px;
-  border-bottom:1px solid #BCBCBC;
-}
-
-#copyright {
-  border-top:1px solid #FFFFFF;
-  padding:16px;
-  text-align:center;
-  color:#5D7283;
-  font-size:12px;
-}
