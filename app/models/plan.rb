@@ -13,7 +13,6 @@
 #
 
 class Plan < ActiveRecord::Base
-  attr_accessible :name, :details, :price, :stripe_id, :tax
 
   def to_s
     name

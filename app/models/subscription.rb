@@ -13,7 +13,7 @@
 #
 
 class Subscription < ActiveRecord::Base
-  attr_accessible :deleted, :start_date, :suspended, :plan_id, :customer_id
+
   belongs_to :customer
   belongs_to :plan
 

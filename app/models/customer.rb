@@ -11,6 +11,5 @@
 #
 
 class Customer < ActiveRecord::Base
-  attr_accessible :name, :email_address, :phone_number
   has_many :subscriptions, dependent: :destroy
 end
