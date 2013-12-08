@@ -9,6 +9,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'stripe'
 
+gem 'haml-rails', '0.5.2'
 gem 'sass-rails', '4.0.1'
 gem 'bootstrap-sass', '3.0.3.0'
 gem 'uglifier', '2.1.1'

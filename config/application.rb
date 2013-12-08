@@ -26,5 +26,8 @@ module AbleHosting
 
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
 
+    # Allow Haml assets in the asset pipeline.
+    Rails.application.assets.register_engine('.haml', Tilt::HamlTemplate)
+
   end
 end
